@@ -58,8 +58,7 @@ def mr_pca_row(A):  # [Friendly2002]
     p = A.shape[1]
     A_copy = np.copy(A)
     for i in range(n):
-        A_copy[i, :] = (A_copy[i, :] - np.mean(A_copy[i, :]))
-        A_copy[i, :] /= np.std(A_copy[i, :] + 1e-5)
+        A_copy[i, :] = (A_copy[i, :] - np.mean(A_copy[i, :])) / np.std(A_copy[i, :] + 1e-5)
     R = (1 / p) * np.matmul(A_copy, A_copy.T)
     _, _, U = np.linalg.svd(R, full_matrices=True)
     u1 = U[:, 0]
