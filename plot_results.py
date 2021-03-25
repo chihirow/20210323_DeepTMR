@@ -184,10 +184,10 @@ def plot_compare_mean_std(S_list, err, err_pca, err_svd, err_mds, f_ylog):
     plt.figure(figsize=(10, 5))
     plt.errorbar(S_list, np.mean(err, axis=1), yerr=np.std(err, axis=1), ls='-', lw=2, capsize=5, fmt='.',
                  color=cm.plasma(0 / 4), label='DeepTMR')
-    plt.errorbar(S_list, np.mean(err_pca, axis=1), yerr=np.std(err_pca, axis=1), ls='-', lw=2, capsize=5, fmt='.',
-                 color=cm.plasma(1 / 4), label='PCA')
     plt.errorbar(S_list, np.mean(err_svd, axis=1), yerr=np.std(err_svd, axis=1), ls='-', lw=2, capsize=5, fmt='.',
-                 color=cm.plasma(2 / 4), label='SVD')
+                 color=cm.plasma(1 / 4), label='SVD-Rank-One')
+    plt.errorbar(S_list, np.mean(err_pca, axis=1), yerr=np.std(err_pca, axis=1), ls='-', lw=2, capsize=5, fmt='.',
+                 color=cm.plasma(2 / 4), label='SVD-Angle')
     plt.errorbar(S_list, np.mean(err_mds, axis=1), yerr=np.std(err_mds, axis=1), ls='-', lw=2, capsize=5, fmt='.',
                  color=cm.plasma(3 / 4), label='MDS')
     if f_ylog:
@@ -243,18 +243,18 @@ def plot_compare_scatter(S_list, err, err_pca, err_svd, err_mds, f_ylog):
     plt.grid(axis='y')
     #
     plt.subplot(1, 4, 2)
-    plt.scatter(x_scatter, err_scatter_pca, marker='.', color='k')
+    plt.scatter(x_scatter, err_scatter_svd, marker='.', color='k')
     plt.xlabel(r'$\sigma$')
-    plt.title('Matrix reordering\nerror (PCA)')
+    plt.title('Matrix reordering\nerror (SVD-Rank-One)')
     if f_ylog:
         plt.yscale('log')
     plt.ylim([ylim0, ylim1])
     plt.grid(axis='y')
     #
     plt.subplot(1, 4, 3)
-    plt.scatter(x_scatter, err_scatter_svd, marker='.', color='k')
+    plt.scatter(x_scatter, err_scatter_pca, marker='.', color='k')
     plt.xlabel(r'$\sigma$')
-    plt.title('Matrix reordering\nerror (SVD)')
+    plt.title('Matrix reordering\nerror (SVD-Angle)')
     if f_ylog:
         plt.yscale('log')
     plt.ylim([ylim0, ylim1])

@@ -125,16 +125,6 @@ def main(f_structure, n_gpu):  # f_structure = 1: LBM, 2: Stripe Model, 3: Grada
         pr.plot_A(A[order_row_mds, :][:, order_col_mds], 'Reordered input matrix\n(MDS)',
                   'synthetic' + str(f_structure) + '_input_sort_mds', clr_matrix)
 
-        # if f_structure == 2:  # Compute squared error
-        #     i_order, j_order, err0 = cmn.select_order(order_row, order_col, A_bar, A)
-        #     i_order_pca, j_order_pca, err0_pca = cmn.select_order(order_row_pca, order_col_pca, A_bar, A)
-        #     i_order_svd, j_order_svd, err0_svd = cmn.select_order(order_row_svd, order_col_svd, A_bar, A)
-        #     i_order_mds, j_order_mds, err0_mds = cmn.select_order(order_row_mds, order_col_mds, A_bar, A)
-        #     print('Squared error, DeepTMR: {:.5f}'.format(err0))
-        #     print('Squared error, PCA    : {:.5f}'.format(err0_pca))
-        #     print('Squared error, SVD    : {:.5f}'.format(err0_svd))
-        #     print('Squared error, MDS    : {:.5f}'.format(err0_mds))
-
     # import pdb;pdb.set_trace()
 
 

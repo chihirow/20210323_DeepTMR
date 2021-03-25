@@ -157,23 +157,23 @@ def main(n_gpu):
                            r'$t=' + str(k + 1) + r'$' + '\n(DeepTMR)',
                            'synthetic4_out', clr_matrix, n_row_fig, n_col_fig, k + 1, fig_A_out_deeptmr.number)
                 plot_A_sub(A[order_row_opt_pca, :][:, order_col_opt_pca], 'Reordered input matrix,\n' +
-                           r'$t=' + str(k + 1) + r'$' + ' (PCA)',
+                           r'$t=' + str(k + 1) + r'$' + ' (SVD-Angle)',
                            'synthetic4_input_sort_pca', clr_matrix, n_row_fig, n_col_fig, k + 1, fig_A_pca.number)
                 plot_A_sub(A[order_row_opt_svd, :][:, order_col_opt_svd], 'Reordered input matrix,\n' +
-                           r'$t=' + str(k + 1) + r'$' + ' (SVD)',
+                           r'$t=' + str(k + 1) + r'$' + ' (SVD-Rank-One)',
                            'synthetic4_input_sort_svd', clr_matrix, n_row_fig, n_col_fig, k + 1, fig_A_svd.number)
                 plot_A_sub(A[order_row_opt_mds, :][:, order_col_opt_mds], 'Reordered input matrix,\n' +
                            r'$t=' + str(k + 1) + r'$' + ' (MDS)',
                            'synthetic4_input_sort_mds', clr_matrix, n_row_fig, n_col_fig, k + 1, fig_A_mds.number)
             print('>', end='', flush=True)
         print('')
-        print(' Error (DeepTMR): {:.2g}'.format(np.mean(err[k])) + ' +- {:.2g}'.format(np.std(err[k])) +
+        print(' Error (DeepTMR)     : {:.2g}'.format(np.mean(err[k])) + ' +- {:.2g}'.format(np.std(err[k])) +
               ', [{:.2g}'.format(np.min(err[k])) + ', {:.2g}]'.format(np.max(err[k])))
-        print(' Error (PCA)    : {:.2g}'.format(np.mean(err_pca[k])) + ' +- {:.2g}'.format(np.std(err_pca[k])) +
+        print(' Error (SVD-Angle)   : {:.2g}'.format(np.mean(err_pca[k])) + ' +- {:.2g}'.format(np.std(err_pca[k])) +
               ', [{:.2g}'.format(np.min(err_pca[k])) + ', {:.2g}]'.format(np.max(err_pca[k])))
-        print(' Error (SVD)    : {:.2g}'.format(np.mean(err_svd[k])) + ' +- {:.2g}'.format(np.std(err_svd[k])) +
+        print(' Error (SVD-Rank-One): {:.2g}'.format(np.mean(err_svd[k])) + ' +- {:.2g}'.format(np.std(err_svd[k])) +
               ', [{:.2g}'.format(np.min(err_svd[k])) + ', {:.2g}]'.format(np.max(err_svd[k])))
-        print(' Error (MDS)    : {:.2g}'.format(np.mean(err_mds[k])) + ' +- {:.2g}'.format(np.std(err_mds[k])) +
+        print(' Error (MDS)         : {:.2g}'.format(np.mean(err_mds[k])) + ' +- {:.2g}'.format(np.std(err_mds[k])) +
               ', [{:.2g}'.format(np.min(err_mds[k])) + ', {:.2g}]'.format(np.max(err_mds[k])))
         elapsed_time = time.time() - start
         print('Overall computation time :{:.2f}'.format(elapsed_time) + '[sec]')
