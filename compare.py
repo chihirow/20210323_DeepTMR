@@ -158,7 +158,7 @@ def main(n_gpu):
                            'synthetic4_out', clr_matrix, n_row_fig, n_col_fig, k + 1, fig_A_out_deeptmr.number)
                 plot_A_sub(A[order_row_opt_pca, :][:, order_col_opt_pca], 'Reordered input matrix,\n' +
                            r'$t=' + str(k + 1) + r'$' + ' (SVD-Angle)',
-                           'synthetic4_input_sort_angle', clr_matrix, n_row_fig, n_col_fig, k + 1, fig_A_pca.number)
+                           'synthetic4_input_sort_svd_angle', clr_matrix, n_row_fig, n_col_fig, k + 1, fig_A_pca.number)
                 plot_A_sub(A[order_row_opt_svd, :][:, order_col_opt_svd], 'Reordered input matrix,\n' +
                            r'$t=' + str(k + 1) + r'$' + ' (SVD-Rank-One)',
                            'synthetic4_input_sort_svd_rank_one', clr_matrix, n_row_fig, n_col_fig, k + 1, fig_A_svd.number)
