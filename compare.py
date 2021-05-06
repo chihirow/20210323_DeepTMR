@@ -151,19 +151,19 @@ def main(n_gpu):
                 plot_A_sub(A, r'Observed matrix $A$,' + '\n' + r'$t=' + str(k + 1) + r'$',
                            'synthetic4_input_permutated', clr_matrix, n_row_fig, n_col_fig, k + 1, fig_A.number)
                 plot_A_sub(A[order_row_opt, :][:, order_col_opt], 'Reordered input matrix,\n' +
-                           r'$t=' + str(k + 1) + r'$' + ' (DeepTMR)',
+                           r'$t=' + str(k + 1) + r'$' + '\n(DeepTMR)',
                            'synthetic4_input_sort', clr_matrix, n_row_fig, n_col_fig, k + 1, fig_A_deeptmr.number)
                 plot_A_sub(A_out[order_row_opt, :][:, order_col_opt], 'Reordered output\nmatrix, ' +
                            r'$t=' + str(k + 1) + r'$' + '\n(DeepTMR)',
                            'synthetic4_out', clr_matrix, n_row_fig, n_col_fig, k + 1, fig_A_out_deeptmr.number)
                 plot_A_sub(A[order_row_opt_pca, :][:, order_col_opt_pca], 'Reordered input matrix,\n' +
-                           r'$t=' + str(k + 1) + r'$' + ' (SVD-Angle)',
+                           r'$t=' + str(k + 1) + r'$' + '\n(SVD-Angle)',
                            'synthetic4_input_sort_svd_angle', clr_matrix, n_row_fig, n_col_fig, k + 1, fig_A_pca.number)
                 plot_A_sub(A[order_row_opt_svd, :][:, order_col_opt_svd], 'Reordered input matrix,\n' +
-                           r'$t=' + str(k + 1) + r'$' + ' (SVD-Rank-One)',
+                           r'$t=' + str(k + 1) + r'$' + '\n(SVD-Rank-One)',
                            'synthetic4_input_sort_svd_rank_one', clr_matrix, n_row_fig, n_col_fig, k + 1, fig_A_svd.number)
                 plot_A_sub(A[order_row_opt_mds, :][:, order_col_opt_mds], 'Reordered input matrix,\n' +
-                           r'$t=' + str(k + 1) + r'$' + ' (MDS)',
+                           r'$t=' + str(k + 1) + r'$' + '\n(MDS)',
                            'synthetic4_input_sort_mds', clr_matrix, n_row_fig, n_col_fig, k + 1, fig_A_mds.number)
             print('>', end='', flush=True)
         print('')
