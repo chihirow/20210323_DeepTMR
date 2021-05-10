@@ -59,7 +59,6 @@ class Loss:
         reg = torch.tensor(0.).to(device, dtype=torch.float)
         for param in self.net.parameters():
             reg += torch.norm(param) ** 2  # 2021.5.10
-        reg = torch.sqrt(reg)  # 2021.5.10
         loss += lambda_reg * reg
 
         return loss
