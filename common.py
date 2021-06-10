@@ -33,10 +33,10 @@ def calc_result(A, model, device):
     for i in range(n):
         for j in range(p):
             x_row_cpu = np.copy(A[i, :])
-            x_row_cpu[j] = 0
+            # x_row_cpu[j] = 0  # 2021/6/10 delete
             x_row_cpu = x_row_cpu[np.newaxis, :]
             x_col_cpu = np.copy(A[:, j])
-            x_col_cpu[i] = 0
+            # x_col_cpu[i] = 0  # 2021/6/10 delete
             x_col_cpu = x_col_cpu[np.newaxis, :]
             x_row = torch.tensor(x_row_cpu).to(device, dtype=torch.float)
             x_col = torch.tensor(x_col_cpu).to(device, dtype=torch.float)
