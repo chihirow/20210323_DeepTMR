@@ -199,9 +199,11 @@ def plot_compare_mean_std(S_list, err, err_pca, err_svd, err_mds, f_ylog):
     if f_ylog:
         plt.savefig('result/synthetic4_compare_mean_ylog.png', bbox_inches='tight')
         plt.savefig('result/synthetic4_compare_mean_ylog.eps', bbox_inches='tight')
+        plt.savefig('result/synthetic4_compare_mean_ylog.pdf', bbox_inches='tight')  # 2026/2/6
     else:
         plt.savefig('result/synthetic4_compare_mean.png', bbox_inches='tight')
         plt.savefig('result/synthetic4_compare_mean.eps', bbox_inches='tight')
+        plt.savefig('result/synthetic4_compare_mean.pdf', bbox_inches='tight')  # 2026/2/6
     plt.close()
 
 
@@ -273,7 +275,9 @@ def plot_compare_scatter(S_list, err, err_pca, err_svd, err_mds, f_ylog):
     if f_ylog:
         plt.savefig('result/synthetic4_compare_ylog.png', bbox_inches='tight')
         plt.savefig('result/synthetic4_compare_ylog.eps', bbox_inches='tight')
+        plt.savefig('result/synthetic4_compare_ylog.pdf', bbox_inches='tight')  # 2026/2/6
     else:
         plt.savefig('result/synthetic4_compare.png', bbox_inches='tight')
         plt.savefig('result/synthetic4_compare.eps', bbox_inches='tight')
+        plt.savefig('result/synthetic4_compare.pdf', bbox_inches='tight')  # 2026/2/6
     plt.close()
